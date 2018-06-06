@@ -1,0 +1,29 @@
+// Java project (for build)
+apply plugin: 'java'
+
+// For Eclipse editor
+apply plugin: 'eclipse'
+
+// For Intelij editor
+apply plugin: 'idea'
+
+repositories {
+    jcenter()
+    mavenCentral()
+//    maven {
+//            url "https://plugins.gradle.org/m2/"
+//            name 'Gradle'
+//    }
+}
+
+
+dependencies {
+  compile("joda-time:joda-time:2.10")
+  testCompile("junit:junit:4.12")
+}
+
+
+
+
+
+

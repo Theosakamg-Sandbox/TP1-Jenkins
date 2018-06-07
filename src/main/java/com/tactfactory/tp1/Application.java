@@ -23,13 +23,11 @@ import org.joda.time.DateTime;
  * @author Mickael Gaillard.
  * @version 1.0
  */
-public class Application {
+public final class Application {
 
-    // Mono-line comment
-
-    /*
-     * Multi-lines comment
-     */
+    private Application() {
+        super();
+    }
 
     /** State of application. (true if running). */
     private static boolean isRunning = false;
@@ -39,21 +37,27 @@ public class Application {
      * Entry-point of application.
      * @param args Argument from CLI.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         isRunning = true;
 
-        System.out.println("Hello W !!!"); DateTime date1 = DateTime.now(); DateTime date2 = DateTime.now(); DateTime date3 = DateTime.now();
-        DateTime date = DateTime.now();
+        final DateTime date = DateTime.now();
+        System.out.println("Application start at : " + date );
     }
 
     /**
      * Add two value.
-     * @param i first value.
-     * @param j second value.
+     * @param value1 first value.
+     * @param value2 second value.
      * @return result of addition.
      */
-    public static int add(int i, int j) {
-        return i + j;
+    public static int add(final int value1, final int value2) {
+        int result = Integer.MIN_VALUE;
+
+        if (isRunning) {
+            result = value1 + value2;
+        }
+
+        return result;
     }
 
 }

@@ -45,7 +45,7 @@ pmd {
       "java-unusedcode"]
 //    toolVersion = '5.8.1'
 //    ruleSetFiles = files("${gradleExtra}/pmd_rules_lvl1.xml")
-//    ignoreFailures = true
+    ignoreFailures = true
 }
 
 tasks.withType(Pmd) {
@@ -55,6 +55,9 @@ tasks.withType(Pmd) {
     }
 }
 
+test {
+    ignoreFailures = true
+}
 
 
 

@@ -28,7 +28,7 @@ public final class Application {
         isRunning = true;
 
         final DateTime date = DateTime.now();
-        System.out.println("Application start at : " + date );
+        System.out.println("Application start at : " + date);
     }
 
     /**

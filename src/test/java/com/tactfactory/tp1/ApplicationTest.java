@@ -17,7 +17,6 @@ public class ApplicationTest {
     @Before
     public void setup() {
         System.out.println("Pre-test");
-        Application.main(null);
     }
 
     @After
@@ -26,10 +25,16 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testAdd() {
+    public void testStartedAdd() {
         int i = 2, j = 3;
 
+        // Test case bad
         int k = Application.add(i, j);
+        Assert.assertEquals("Add not good !", k, Integer.MIN_VALUE);
+
+        // Test case Good
+        Application.main(null);
+        k = Application.add(i, j);
 
         Assert.assertEquals("Add not good !", k, 5);
     }

@@ -50,29 +50,29 @@ public final class Application {
     }
 
     // Test CPD
-//    /**
-//     * Sub two value.
-//     * @param value1 first value.
-//     * @param value2 second value.
-//     * @return result of addition.
-//     */
-//    public static int sub(final int value1, final int value2) {
-//        int result;
-//
-//        if (isRunning) {
-//            result = value1 - value2;
-//        } else {
-//            result = Integer.MIN_VALUE;
-//        }
-//
-//        return result;
-//    }
+    /**
+     * Sub two value.
+     * @param value1 first value.
+     * @param value2 second value.
+     * @return result of addition.
+     */
+    public static int sub(final int value1, final int value2) {
+        int result;
+
+        if (isRunning) {
+            result = value1 - value2;
+        } else {
+            result = Integer.MIN_VALUE;
+        }
+
+        return result;
+    }
 
     // Findbugs test
-//    @Override
-//    public boolean equals(Object obj) {
-//        //return super.equals(obj);
-//        return true;
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        //return super.equals(obj);
+        return true;
+    }
 
 }

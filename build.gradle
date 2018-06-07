@@ -43,10 +43,6 @@ checkstyle {
     configFile file("gradle/script/checkstyle.xml")
 }
 
-checkstyleMain {
-    source ='src/main/java'
-}
-
 tasks.withType(Checkstyle) {
     reports {
         xml.enabled true

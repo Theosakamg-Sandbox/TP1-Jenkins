@@ -25,7 +25,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testStartedAdd() {
+    public void testAdd() {
         int i = 2, j = 3;
 
         // Test case bad

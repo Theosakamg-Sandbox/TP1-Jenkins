@@ -7,6 +7,8 @@ apply plugin: 'eclipse'
 // For Intelij editor
 apply plugin: 'idea'
 
+apply plugin: 'pmd'
+
 repositories {
     jcenter()
     mavenCentral()
@@ -16,13 +18,42 @@ repositories {
 //    }
 }
 
-
 dependencies {
   compile("joda-time:joda-time:2.10")
   testCompile("junit:junit:4.12")
 }
 
+def gradleExtra="${project.rootDir}/gradle/script"
+def reportDir="${project.buildDir}/reports"
 
+pmd {
+    pmdTest.enabled = false
+    ruleSets = ["java-basic",
+      "java-braces",
+      "java-clone",
+      "java-codesize",
+      "java-comments",
+      "java-controversial",
+      "java-coupling",
+      "java-design",
+      "java-empty",
+      "java-finalizers",
+      "java-imports",
+      "java-naming",
+      "java-optimizations",
+      "java-strings",
+      "java-unusedcode"]
+//    toolVersion = '5.8.1'
+//    ruleSetFiles = files("${gradleExtra}/pmd_rules_lvl1.xml")
+//    ignoreFailures = true
+}
+
+tasks.withType(Pmd) {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
 
 
 

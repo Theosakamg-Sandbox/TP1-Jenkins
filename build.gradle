@@ -9,8 +9,9 @@ apply plugin: 'idea'
 
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
-apply plugin: 'jacoco'
 apply plugin: 'pmd'
+apply plugin: 'jacoco'
+apply plugin: 'jdepend'
 
 repositories {
     jcenter()
@@ -135,6 +136,22 @@ task cpd {
         }
     }
 }
+
+
+// JDepend
+jdepend {
+    jdependTest.enabled = false
+//   toolVersion = "2.9.1"
+    ignoreFailures = true
+}
+
+tasks.withType(JDepend) {
+    reports {
+        xml.enabled true
+        text.enabled false
+    }
+}
+
 
 
 // Test case
